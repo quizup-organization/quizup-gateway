@@ -1,0 +1,70 @@
+spring:
+  application:
+    name: quizup-gateway
+  profiles:
+    default: local
+  cloud:
+    gateway:
+      server:
+        webflux:
+          default-filters:
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin, RETAIN_UNIQUE
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowed-origin-patterns:
+                  - "*"
+                allowed-methods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - OPTIONS
+                allowed-headers:
+                  - "*"
+                allow-credentials: true
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    use-root-path: true
+    oauth:
+      client-id: swagger
+      scopes: "openid profile"
+      use-pkce-with-authorization-code-grant: true
+    urls:
+      - name: identity-service
+        url: /identity-service/v3/api-docs
+
+      - name: theme-service
+        url: /theme-service/v3/api-docs
+
+      - name: game-service
+        url: /game-service/v3/api-docs
+
+      - name: social-service
+        url: /social-service/v3/api-docs
+
+      - name: matchmaking-service
+        url: /matchmaking-service/v3/api-docs
+
+      - name: profile-service
+        url: /profile-service/v3/api-docs
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway,metrics
+  endpoint:
+    health:
+      show-details: always
+    gateway:
+      access: unrestricted
+
+
+logging:
+  level:
+    io.github.quizup: ${QUIZUP_LOG_LEVEL:INFO}
+    org.springframework.cloud.gateway: ${QUIZUP_GATEWAY_LOG_LEVEL:INFO}

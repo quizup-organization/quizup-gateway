@@ -1,0 +1,94 @@
+server:
+  port: 8080
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: identity-service
+              uri: ${QUIZUP_GATEWAY_IDENTITY_URL:http://identity.quizup-prod.svc.cluster.local:8080}
+              predicates:
+                - Path=/identity-service/**
+              filters:
+                - StripPrefix=1
+
+            - id: game-service
+              uri: ${QUIZUP_GATEWAY_GAME_URL:http://game.quizup-prod.svc.cluster.local:8080}
+              predicates:
+                - Path=/game-service/**
+              filters:
+                - StripPrefix=1
+
+            - id: theme-service
+              uri: ${QUIZUP_GATEWAY_THEME_URL:http://theme.quizup-prod.svc.cluster.local:8080}
+              predicates:
+                - Path=/theme-service/**
+              filters:
+                - StripPrefix=1
+
+            - id: social-service
+              uri: ${QUIZUP_GATEWAY_SOCIAL_URL:http://social.quizup-prod.svc.cluster.local:8080}
+              predicates:
+                - Path=/social-service/**
+              filters:
+                - StripPrefix=1
+
+            - id: matchmaking-service
+              uri: ${QUIZUP_GATEWAY_MATCHMAKING_URL:http://matchmaking.quizup-prod.svc.cluster.local:8080}
+              predicates:
+                - Path=/matchmaking-service/**
+              filters:
+                - StripPrefix=1
+
+            - id: profile-service
+              uri: ${QUIZUP_GATEWAY_PROFILE_URL:http://profile.quizup-prod.svc.cluster.local:8080}
+              predicates:
+                - Path=/profile-service/**
+              filters:
+                - StripPrefix=1
+
+            - id: leaderboard-service
+              uri: ${QUIZUP_GATEWAY_LEADERBOARD_URL:http://leaderboard.quizup-prod.svc.cluster.local:8080}
+              predicates:
+                - Path=/leaderboard-service/**
+              filters:
+                - StripPrefix=1
+
+            - id: game-service-ws
+              uri: ws://${QUIZUP_GATEWAY_GAME_URL:ws://game.quizup-prod.svc.cluster.local:8080}
+              predicates:
+                - Path=/game-service/ws
+              filters:
+                - StripPrefix=1
+
+            - id: social-service-ws
+              uri: ws://${QUIZUP_GATEWAY_SOCIAL_URL:ws://social.quizup-prod.svc.cluster.local:8080}
+              predicates:
+                - Path=/social-service/ws
+              filters:
+                - StripPrefix=1
+
+            - id: matchmaking-service-ws
+              uri: ws://${QUIZUP_GATEWAY_MATCHMAKING_URL:ws://matchmaking.quizup-prod.svc.cluster.local:8080}
+              predicates:
+                - Path=/matchmaking-service/ws
+              filters:
+                - StripPrefix=1
+
+            - id: profile-service-ws
+              uri: ws://${QUIZUP_GATEWAY_PROFILE_URL:ws://profile.quizup-prod.svc.cluster.local:8080}
+              predicates:
+                - Path=/profile-service/ws
+              filters:
+                - StripPrefix=1
+
+logging:
+  level:
+    io.github.quizup: INFO
+    org.springframework.cloud.gateway: INFO
+
