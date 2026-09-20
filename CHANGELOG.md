@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/quizup-organization/quizup-gateway/compare/v1.1.0...v1.2.0) (2026-09-20)
+
+### Features
+
+* **observability:** consume quizup-sdk 1.2.0 (structured logs + tracing) ([bd157c9](https://github.com/quizup-organization/quizup-gateway/commit/bd157c907c7217ef40b96229b1483c5d3a4fd588))
+
 ## [1.1.0](https://github.com/quizup-organization/quizup-gateway/compare/v1.0.0...v1.1.0) (2026-09-20)
 
 ### Features
