@@ -1,3 +1,9 @@
+## [1.4.3](https://github.com/quizup-organization/quizup-gateway/compare/v1.4.2...v1.4.3) (2026-09-20)
+
+### Bug Fixes
+
+* **deps:** bump quizup-sdk to 2.1.0 ([d80aa11](https://github.com/quizup-organization/quizup-gateway/commit/d80aa118e40897ad5b0bdfa4c8d17902de32c2c6))
+
 ## [1.4.2](https://github.com/quizup-organization/quizup-gateway/compare/v1.4.1...v1.4.2) (2026-09-20)
 
 ### Bug Fixes
