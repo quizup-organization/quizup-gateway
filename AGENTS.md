@@ -42,17 +42,17 @@ microservice cible). Le frontend appelle **toujours** à travers ce gateway.
 
 | id                      | uri (env var / défaut)                                                              | Path                        | StripPrefix |
 |-------------------------|-------------------------------------------------------------------------------------|-----------------------------|-------------|
-| `identity-service`      | `${QUIZUP_GATEWAY_IDENTITY_URL:…identity.quizup-prod.svc.cluster.local:8080}`       | `/identity-service/**`      | `1`         |
-| `game-service`          | `${QUIZUP_GATEWAY_GAME_URL:…game.quizup-prod.svc.cluster.local:8080}`               | `/game-service/**`          | `1`         |
-| `theme-service`         | `${QUIZUP_GATEWAY_THEME_URL:…theme.quizup-prod.svc.cluster.local:8080}`             | `/theme-service/**`         | `1`         |
-| `social-service`        | `${QUIZUP_GATEWAY_SOCIAL_URL:…social.quizup-prod.svc.cluster.local:8080}`           | `/social-service/**`        | `1`         |
-| `matchmaking-service`   | `${QUIZUP_GATEWAY_MATCHMAKING_URL:…matchmaking.quizup-prod.svc.cluster.local:8080}` | `/matchmaking-service/**`   | `1`         |
-| `profile-service`       | `${QUIZUP_GATEWAY_PROFILE_URL:…profile.quizup-prod.svc.cluster.local:8080}`         | `/profile-service/**`       | `1`         |
-| `leaderboard-service`   | `${QUIZUP_GATEWAY_LEADERBOARD_URL:…leaderboard.quizup-prod.svc.cluster.local:8080}` | `/leaderboard-service/**` | `1`         |
-| `game-service-ws`       | `${QUIZUP_GATEWAY_GAME_URL:ws://game.quizup-prod.svc.cluster.local:8080}`           | `/game-service/ws`          | `1`         |
-| `social-service-ws`     | `${QUIZUP_GATEWAY_SOCIAL_URL:ws://social.quizup-prod.svc.cluster.local:8080}`       | `/social-service/ws`        | `1`         |
-| `matchmaking-service-ws`| `${QUIZUP_GATEWAY_MATCHMAKING_URL:ws://matchmaking.quizup-prod.svc.cluster.local:8080}` | `/matchmaking-service/ws` | `1`         |
-| `profile-service-ws`    | `${QUIZUP_GATEWAY_PROFILE_URL:ws://profile.quizup-prod.svc.cluster.local:8080}`     | `/profile-service/ws`       | `1`         |
+| `identity-service`      | `${QUIZUP_GATEWAY_IDENTITY_URL:…quizup-identity.quizup-prod.svc.cluster.local}`       | `/identity-service/**`      | `1`         |
+| `game-service`          | `${QUIZUP_GATEWAY_GAME_URL:…quizup-game.quizup-prod.svc.cluster.local}`               | `/game-service/**`          | `1`         |
+| `theme-service`         | `${QUIZUP_GATEWAY_THEME_URL:…quizup-theme.quizup-prod.svc.cluster.local}`             | `/theme-service/**`         | `1`         |
+| `social-service`        | `${QUIZUP_GATEWAY_SOCIAL_URL:…quizup-social.quizup-prod.svc.cluster.local}`           | `/social-service/**`        | `1`         |
+| `matchmaking-service`   | `${QUIZUP_GATEWAY_MATCHMAKING_URL:…quizup-matchmaking.quizup-prod.svc.cluster.local}` | `/matchmaking-service/**`   | `1`         |
+| `profile-service`       | `${QUIZUP_GATEWAY_PROFILE_URL:…quizup-profile.quizup-prod.svc.cluster.local}`         | `/profile-service/**`       | `1`         |
+| `leaderboard-service`   | `${QUIZUP_GATEWAY_LEADERBOARD_URL:…quizup-leaderboard.quizup-prod.svc.cluster.local}` | `/leaderboard-service/**` | `1`         |
+| `game-service-ws`       | `${QUIZUP_GATEWAY_GAME_URL:ws://quizup-game.quizup-prod.svc.cluster.local}`           | `/game-service/ws`          | `1`         |
+| `social-service-ws`     | `${QUIZUP_GATEWAY_SOCIAL_URL:ws://quizup-social.quizup-prod.svc.cluster.local}`       | `/social-service/ws`        | `1`         |
+| `matchmaking-service-ws`| `${QUIZUP_GATEWAY_MATCHMAKING_URL:ws://quizup-matchmaking.quizup-prod.svc.cluster.local}` | `/matchmaking-service/ws` | `1`         |
+| `profile-service-ws`    | `${QUIZUP_GATEWAY_PROFILE_URL:ws://quizup-profile.quizup-prod.svc.cluster.local}`     | `/profile-service/ws`       | `1`         |
 
 > **WebSocket/STOMP** : le frontend ouvre **N connexions STOMP** (1 par service émetteur :
 > game, social, matchmaking, profile) **via le gateway** — jamais les ports des services en direct.
