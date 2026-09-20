@@ -1,3 +1,9 @@
+## [1.4.4](https://github.com/quizup-organization/quizup-gateway/compare/v1.4.3...v1.4.4) (2026-09-20)
+
+### Bug Fixes
+
+* **config:** align prod service URLs with quizup-* names ([a1f556c](https://github.com/quizup-organization/quizup-gateway/commit/a1f556c06e6f8cea4668c2fa99875c4f6d86a709))
+
 ## [1.4.3](https://github.com/quizup-organization/quizup-gateway/compare/v1.4.2...v1.4.3) (2026-09-20)
 
 ### Bug Fixes
