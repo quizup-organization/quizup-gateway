@@ -88,6 +88,10 @@ spring:
                 - StripPrefix=1
 
 logging:
+  structured:
+    # Logs JSON ECS en prod uniquement (défaut SDK). En local : console lisible.
+    format:
+      console: ""
   level:
     io.github.quizup: DEBUG
     org.springframework.cloud.gateway: DEBUG
