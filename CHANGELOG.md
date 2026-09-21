@@ -1,3 +1,9 @@
+## [1.4.5](https://github.com/quizup-organization/quizup-gateway/compare/v1.4.4...v1.4.5) (2026-09-21)
+
+### Bug Fixes
+
+* **observability:** keep readable console logs in local ([687d9ec](https://github.com/quizup-organization/quizup-gateway/commit/687d9ec69ae3224911fac71e3f262b775d1d35e3))
+
 ## [1.4.4](https://github.com/quizup-organization/quizup-gateway/compare/v1.4.3...v1.4.4) (2026-09-20)
 
 ### Bug Fixes
