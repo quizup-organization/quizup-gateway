@@ -35,24 +35,22 @@ class GatewayWebSocketRoutingConfigTest {
 
     @ParameterizedTest
     @CsvSource({
-        "application-local.yml, /game-service/ws",
-        "application-local.yml, /social-service/ws",
-        "application-local.yml, /matchmaking-service/ws",
-        "application-prod.yml,   /game-service/ws",
-        "application-prod.yml,   /social-service/ws",
-        "application-prod.yml,   /matchmaking-service/ws",
+        "/game-service/ws",
+        "/social-service/ws",
+        "/matchmaking-service/ws",
+        "/profile-service/ws",
     })
-    void ws_route_exists(String yml, String path) throws Exception {
-        List<Map<String, Object>> allRoutes = routes(loadYaml(yml.trim()));
+    void ws_route_exists(String path) throws Exception {
+        List<Map<String, Object>> allRoutes = routes(loadYaml("application.yml"));
         boolean found = allRoutes.stream().anyMatch(r ->
                 r.get("uri") != null
-                        && r.get("uri").toString().startsWith("ws://")
+                        && r.get("uri").toString().contains("ws://")
                         && r.get("predicates") instanceof List<?>
                         && r.get("predicates").toString().contains("Path=" + path)
                         && r.get("filters") instanceof List<?>
                         && r.get("filters").toString().contains("StripPrefix=1"));
         assertThat(found)
-                .as("%s contient la route WS %s avec StripPrefix=1", yml, path)
+                .as("application.yml contient la route WS %s avec StripPrefix=1", path)
                 .isTrue();
     }
 }

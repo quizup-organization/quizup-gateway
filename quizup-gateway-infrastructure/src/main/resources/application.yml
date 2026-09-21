@@ -24,6 +24,56 @@ spring:
                   - "*"
                 allow-credentials: true
 
+          # Table de routes unique (local + prod) : seules les URIs changent via variables
+          # d'environnement (les défauts ciblent les ports locaux).
+          routes:
+            - id: identity-service
+              uri: ${QUIZUP_GATEWAY_IDENTITY_URL:http://localhost:8085}
+              predicates: [ Path=/identity-service/** ]
+              filters: [ StripPrefix=1 ]
+            - id: game-service
+              uri: ${QUIZUP_GATEWAY_GAME_URL:http://localhost:8082}
+              predicates: [ Path=/game-service/** ]
+              filters: [ StripPrefix=1 ]
+            - id: theme-service
+              uri: ${QUIZUP_GATEWAY_THEME_URL:http://localhost:8086}
+              predicates: [ Path=/theme-service/** ]
+              filters: [ StripPrefix=1 ]
+            - id: social-service
+              uri: ${QUIZUP_GATEWAY_SOCIAL_URL:http://localhost:8087}
+              predicates: [ Path=/social-service/** ]
+              filters: [ StripPrefix=1 ]
+            - id: matchmaking-service
+              uri: ${QUIZUP_GATEWAY_MATCHMAKING_URL:http://localhost:8090}
+              predicates: [ Path=/matchmaking-service/** ]
+              filters: [ StripPrefix=1 ]
+            - id: profile-service
+              uri: ${QUIZUP_GATEWAY_PROFILE_URL:http://localhost:8088}
+              predicates: [ Path=/profile-service/** ]
+              filters: [ StripPrefix=1 ]
+            - id: leaderboard-service
+              uri: ${QUIZUP_GATEWAY_LEADERBOARD_URL:http://localhost:8091}
+              predicates: [ Path=/leaderboard-service/** ]
+              filters: [ StripPrefix=1 ]
+            # WebSocket : URI dédiée (schéma `ws://`) — le schéma HTTP des variables
+            # ci-dessus ne peut pas être réutilisé tel quel.
+            - id: game-service-ws
+              uri: ${QUIZUP_GATEWAY_GAME_WS_URL:ws://localhost:8082}
+              predicates: [ Path=/game-service/ws ]
+              filters: [ StripPrefix=1 ]
+            - id: social-service-ws
+              uri: ${QUIZUP_GATEWAY_SOCIAL_WS_URL:ws://localhost:8087}
+              predicates: [ Path=/social-service/ws ]
+              filters: [ StripPrefix=1 ]
+            - id: matchmaking-service-ws
+              uri: ${QUIZUP_GATEWAY_MATCHMAKING_WS_URL:ws://localhost:8090}
+              predicates: [ Path=/matchmaking-service/ws ]
+              filters: [ StripPrefix=1 ]
+            - id: profile-service-ws
+              uri: ${QUIZUP_GATEWAY_PROFILE_WS_URL:ws://localhost:8088}
+              predicates: [ Path=/profile-service/ws ]
+              filters: [ StripPrefix=1 ]
+
 springdoc:
   swagger-ui:
     enabled: true
