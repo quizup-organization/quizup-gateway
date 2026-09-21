@@ -64,8 +64,7 @@ microservice cible). Le frontend appelle **toujours** à travers ce gateway.
 
 ## 3. Structure Maven
 
-- `quizup-gateway-domain` : **vide** (seulement `pom.xml`) — pas de domaine, pas d'use cases.
-- `quizup-gateway-infrastructure` :
+- `quizup-gateway-infrastructure` (module unique) :
     - `GatewayServiceApplication.java` (`@SpringBootApplication`, `static void main`)
     - `application.yml` / `application-local.yml` / `application-prod.yml`
 

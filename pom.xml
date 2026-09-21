@@ -23,7 +23,6 @@
     </distributionManagement>
 
     <modules>
-        <module>quizup-gateway-domain</module>
         <module>quizup-gateway-infrastructure</module>
     </modules>
 </project>
