@@ -1,3 +1,9 @@
+## [1.4.8](https://github.com/quizup-organization/quizup-gateway/compare/v1.4.7...v1.4.8) (2026-09-22)
+
+### Bug Fixes
+
+* **quizup-gateway:** upgrade quizup-parent to 2.3.4 ([a83077e](https://github.com/quizup-organization/quizup-gateway/commit/a83077e26e893feace49b441b6805173737e38df))
+
 ## [1.4.7](https://github.com/quizup-organization/quizup-gateway/compare/v1.4.6...v1.4.7) (2026-09-22)
 
 ### Bug Fixes
