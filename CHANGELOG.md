@@ -1,3 +1,9 @@
+## [1.4.11](https://github.com/quizup-organization/quizup-gateway/compare/v1.4.10...v1.4.11) (2026-09-24)
+
+### Bug Fixes
+
+* **deps:** bump quizup-parent to 2.4.4 (typed PageResult over query transport) ([c854908](https://github.com/quizup-organization/quizup-gateway/commit/c854908540404efdaf7c5cedb3aa8e07052cbd18))
+
 ## [1.4.10](https://github.com/quizup-organization/quizup-gateway/compare/v1.4.9...v1.4.10) (2026-09-24)
 
 ### Bug Fixes
