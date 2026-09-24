@@ -1,3 +1,9 @@
+## [1.4.9](https://github.com/quizup-organization/quizup-gateway/compare/v1.4.8...v1.4.9) (2026-09-24)
+
+### Bug Fixes
+
+* **deps:** bump quizup-parent to 2.4.2 (search criteria type info) ([3a6d6d8](https://github.com/quizup-organization/quizup-gateway/commit/3a6d6d83dd498bea4d0d62b107bae54e676cce4b))
+
 ## [1.4.8](https://github.com/quizup-organization/quizup-gateway/compare/v1.4.7...v1.4.8) (2026-09-22)
 
 ### Bug Fixes
